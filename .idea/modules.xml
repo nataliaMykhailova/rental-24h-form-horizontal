@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rental-24h-form-horizont.iml" filepath="$PROJECT_DIR$/rental-24h-form-horizont.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rental-24h-form-horizontal.iml" filepath="$PROJECT_DIR$/rental-24h-form-horizontal.iml" />
     </modules>
   </component>
 </project>
