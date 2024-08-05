@@ -749,7 +749,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         calendarContainer.style.position = 'absolute';
         calendarContainer.style.top = `${rect.bottom + window.scrollY}px`;
-
+        if (window.innerWidth >= 1200) {
+            calendarContainer.style.left = `${rect.left - 200}px`;
+        } else {
+            calendarContainer.style.left = 0;
+        }
         updateCalendar();
     }
 
