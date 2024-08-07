@@ -69,6 +69,7 @@ select.open {
     white-space: nowrap;
     background: #ffffff;
     cursor: pointer;
+    color: black;
 }
 
 .residence-and-age label{
@@ -132,6 +133,10 @@ input::placeholder {
     width: 104px;
     height: 56px;
     cursor: pointer;
+}
+
+.data-picker-hour option {
+    font-size: 120px;
 }
 
 .data-picker-day {
@@ -523,6 +528,7 @@ input:checked + .slider:before {
     -o-user-select: none;
 }
 
+
 .day-cell.weekday-header {
     color: #8A9197;
     text-align: center;
@@ -613,7 +619,7 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     height: 30px;
-    font-size: 16px;
+    font-size: 1.2vw;
     cursor: pointer;
     margin: 0;
 }
