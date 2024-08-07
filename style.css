@@ -236,7 +236,6 @@ input::placeholder {
 #returnLocationWrapper:hover #drop-of-icon path,
 .data-picker-day:hover svg path,
 .input-wrapper:hover #loc-icon path,
-.input-wrapper:active #loc-icon path,
 .input-wrapper.error:hover #drop-of-icon path,
 .input-wrapper.error.focused #drop-of-icon path,
 .input-wrapper.focused #loc-icon path,

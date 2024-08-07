@@ -53,8 +53,7 @@ document.querySelectorAll('.clear-icon').forEach(icon => {
         input.value = '';
         input.classList.remove('filled');
         input.focus();
-        const submitBtn = document.querySelector('.submit-btn');
-        submitBtn.style.display = 'block';
+
     });
 });
 
@@ -1183,10 +1182,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.return-location, .data-picker-container, .residence-and-age, .check-box, .input-wrapper, .submit-btn, .promo-code, #returnLocationWrapper')
                 .forEach(el => el.classList.add('expanded'));
             locationInput.blur();
-            returnLocationButton.classList.remove('mobi-hidden');
+            returnLocationButton.classList.remove('hidden');
             formContainer.classList.remove('fixed-on-focus');
             submitBtn.style.display = 'block';
-            moveResidenceAndAge();
+            moveResidenceAndAge()
+
         };
 
         locationInput.addEventListener('focus', () => {
@@ -1194,6 +1194,13 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.style.display = 'none';
             formContainer.classList.add('fixed-on-focus');
             removeIcon.style.display = 'inline';
+            document.querySelectorAll('.return-location, .data-picker-container, .residence-and-age, .check-box, .input-wrapper, .submit-btn, .promo-code, #returnLocationWrapper')
+                .forEach(el => el.classList.remove('expanded'));
+            returnLocationWrapper.classList.add('hidden');
+            if (promoCodeField.classList.contains('active')) {
+                promoCodeField.classList.remove('active');
+                promoCodeToggle.checked = false;
+            }
         });
 
         document.addEventListener('click', function (e) {
