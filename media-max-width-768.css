@@ -193,7 +193,7 @@
         height: auto;
     }
 
-    .day-cell:hover {
+    .day-cell:hover{
         border-radius: 8px;
         background: none;
     }

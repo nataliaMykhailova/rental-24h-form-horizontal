@@ -559,9 +559,11 @@ input:checked + .slider:before {
     transition: border-color 0.5s;
 }
 
-.day-cell:hover {
-    border-radius: 8px;
-    background: #CDDFFD;
+@media (min-width: 768px){
+    .day-cell:hover {
+        border-radius: 8px;
+        background: #CDDFFD;
+    }
 }
 
 .selected-pickup {
