@@ -508,13 +508,19 @@ input:checked + .slider:before {
 }
 
 .day-cell {
-    width: 48px;
-    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
     cursor: pointer;
+}
+
+.calendar-container, .calendar-body, .day-cell {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
 }
 
 .day-cell.weekday-header {

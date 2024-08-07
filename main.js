@@ -52,6 +52,7 @@ document.querySelectorAll('.clear-icon').forEach(icon => {
         const input = this.previousElementSibling;
         input.value = '';
         input.classList.remove('filled');
+        input.focus();
     });
 });
 
@@ -625,6 +626,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (currentPicker === 'dropoff' && selectedPickupDate && date > selectedPickupDate) {
                             addInRangeClasses(date);
                             cell.classList.add('hover-highlight');
+                        } else if (currentPicker === 'pickup' && date > today && (!selectedDropoffDate || date < selectedDropoffDate)) {
+                            addInRangeClasses(date);
+                            cell.classList.add('hover-highlight');
                         }
                     });
 
@@ -790,8 +794,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function addInRangeClasses(hoverDate) {
         document.querySelectorAll('.day-cell').forEach(dayCell => {
             const dayDate = new Date(dayCell.dataset.date);
-            if (dayDate > selectedPickupDate && dayDate < hoverDate) {
-                dayCell.classList.add('in-range');
+
+            if (currentPicker === 'dropoff' && selectedPickupDate) {
+                if (dayDate > selectedPickupDate && dayDate < hoverDate) {
+                    dayCell.classList.add('in-range');
+                }
+            } else if (currentPicker === 'pickup' && selectedDropoffDate) {
+                if (dayDate > hoverDate && dayDate < selectedDropoffDate) {
+                    dayCell.classList.add('in-range');
+                }
             }
         });
     }
