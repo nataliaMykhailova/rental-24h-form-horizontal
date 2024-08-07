@@ -193,6 +193,11 @@
         height: auto;
     }
 
+    .day-cell:hover {
+        border-radius: 8px;
+        background: none;
+    }
+
     .svg-clock {
         display: block;
     }

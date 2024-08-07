@@ -515,7 +515,7 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.calendar-container, .calendar-body, .day-cell {
+.calendar-container, .calendar-body, .day-cell, .time-option {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -556,7 +556,6 @@ input:checked + .slider:before {
 .day-cell:hover {
     border-radius: 8px;
     background: #CDDFFD;
-
 }
 
 .selected-pickup {
