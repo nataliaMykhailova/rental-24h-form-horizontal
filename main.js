@@ -963,6 +963,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const monthYearElement = document.createElement('div');
             monthYearElement.classList.add('month-year');
+            monthYearElement.style.position = 'sticky';
+            monthYearElement.style.top = '18px';
             calendarSection.appendChild(monthYearElement);
 
             calendarSection.appendChild(newContainer);
@@ -1079,6 +1081,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    document.getElementById('calendar-container-modal').addEventListener('scroll', function () {
+        const calendarSections = document.querySelectorAll('.calendar-section');
+        let sticky = false;
+
+        calendarSections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const monthYearElement = section.querySelector('.month-year');
+
+            // Перевіряємо, чи секція досягла верхнього краю
+            if (rect.top <= 0 && rect.bottom > 0) {
+                if (!sticky) {
+                    monthYearElement.classList.add('sticky-header');
+                    sticky = true;
+                }
+            } else {
+                monthYearElement.classList.remove('sticky-header');
+                sticky = false;
+            }
+
+            // Перевірка на перетин з наступним місяцем
+            if (index < calendarSections.length - 1) {
+                const nextSection = calendarSections[index + 1];
+                const nextRect = nextSection.getBoundingClientRect();
+                const nextMonthYearElement = nextSection.querySelector('.month-year');
+
+                if (nextRect.top <= 0 && nextRect.bottom > 0) {
+                    monthYearElement.classList.remove('sticky-header');
+                    nextMonthYearElement.classList.add('sticky-header');
+                }
+            }
+        });
+    });
 
 
 
@@ -1192,16 +1226,11 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         locationInput.addEventListener('focus', () => {
-            formContainer.classList.add('expanded');
-            submitBtn.style.display = 'none';
-            formContainer.classList.add('fixed-on-focus');
-            removeIcon.style.display = 'inline';
-            document.querySelectorAll('.return-location, .data-picker-container, .residence-and-age, .check-box, .input-wrapper, .submit-btn, .promo-code, #returnLocationWrapper')
-                .forEach(el => el.classList.remove('expanded'));
-            returnLocationWrapper.classList.add('hidden');
-            if (promoCodeField.classList.contains('active')) {
-                promoCodeField.classList.remove('active');
-                promoCodeToggle.checked = false;
+            if (!formContainer.classList.contains('expanded')) {
+                formContainer.classList.add('expanded');
+                submitBtn.style.display = 'none';
+                formContainer.classList.add('fixed-on-focus');
+                removeIcon.style.display = 'inline';
             }
         });
 
