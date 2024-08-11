@@ -51,7 +51,7 @@ body {
 }
 
 #dynamic-width-select {
-    margin-right: -2px;
+    margin-right: 5px;
 }
 
 select.open {
