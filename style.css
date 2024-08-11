@@ -54,6 +54,10 @@ body {
     margin-right: 5px;
 }
 
+#age-select {
+    margin-right: 5px;
+}
+
 select.open {
     box-shadow: 0 160px 45px 0 rgba(73, 73, 91, 0.01), 0 102px 41px 0 rgba(73, 73, 91, 0.07), 0 58px 35px 0 rgba(73, 73, 91, 0.22), 0 26px 26px 0 rgba(73, 73, 91, 0.38), 0 6px 14px 0 rgba(73, 73, 91, 0.44);
 }
@@ -85,7 +89,6 @@ select.open {
 }
 
 .tooltip-container {
-    padding-left: 5px;
     position: relative;
     display: inline-block;
 }
