@@ -900,3 +900,12 @@ input:checked + .slider::after {
     border: none;
     border-radius: 5px;
 }
+
+input:focus, textarea:focus {
+    caret-color: black;
+    outline: none;
+}
+
+input, textarea {
+    caret-color: black; /* Чорний курсор */
+}
