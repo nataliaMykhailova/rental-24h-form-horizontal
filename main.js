@@ -7,6 +7,15 @@ document.getElementById('promo-code-toggle').addEventListener('change', function
     }
 });
 
+document.querySelectorAll('input, textarea').forEach(input => {
+    input.addEventListener('focus', function() {
+        if (this.value === '') {
+            this.value = ' ';
+            this.value = '';
+        }
+    });
+});
+
 const switchInput = document.querySelector('.switch-box input[type="checkbox"]');
 const returnLocationWrapper = document.getElementById('returnLocationWrapper');
 const removeIcon2 = document.querySelector('.remove-icon2');
