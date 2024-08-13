@@ -413,7 +413,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         const fontFamily = window.getComputedStyle(selectElement).fontFamily;
         context.font = `${fontSize} ${fontFamily}`;
         const width = context.measureText(optionText).width;
-        selectElement.style.width = `${width}px`;
+        const padding = parseFloat(window.getComputedStyle(selectElement).paddingLeft) +
+            parseFloat(window.getComputedStyle(selectElement).paddingRight);
+        selectElement.style.width = `${width + padding}px`;
     }
 
 
