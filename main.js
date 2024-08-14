@@ -27,15 +27,6 @@ switchInput.addEventListener('change', function() {
 document.querySelectorAll('.input-wrapper').forEach(function (element) {
     element.addEventListener('focusin', function () {
         this.classList.add('focused');
-        if (this.querySelector('#location')) {
-            document.querySelectorAll('#loc-icon path').forEach(function(icon) {
-                icon.style.fill = '#4A44F2'; // Синій колір
-            });
-        } else if (this.querySelector('#returnLocation')) {
-            document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
-                icon.style.fill = '#4A44F2'; // Синій колір
-            });
-        }
     });
     element.addEventListener('focusout', function () {
         this.classList.remove('focused');
@@ -170,9 +161,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const rentNearMeDiv = createCustomButton('Rent car near me', 'left', 'rent');
                 rentNearMeDiv.addEventListener('click', function (e) {
                     findNearestLocation(locations, inp);
-                    document.querySelectorAll('#loc-icon path').forEach(function(icon) {
-                        icon.style.fill = 'black';
-                    });
+                    // document.querySelectorAll('#loc-icon path').forEach(function(icon) {
+                    //     icon.style.fill = 'black';
+                    // });
                     closeAllLists();
                 });
                 a.appendChild(rentNearMeDiv);
@@ -181,9 +172,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 returnAtPickupDiv.addEventListener('click', function (e) {
                     inp.value = locationInput.value;
                     inp.closest('.input-wrapper').classList.remove('focused');
-                    document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
-                        icon.style.fill = 'black';
-                    });
+                    // document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
+                    //     icon.style.fill = 'black';
+                    // });
                     closeAllLists();
                 });
                 a.appendChild(returnAtPickupDiv);
@@ -202,15 +193,15 @@ document.addEventListener("DOMContentLoaded", async function () {
                     b.innerHTML += `<input type="hidden" value="${arr[i].display}">`;
                     b.addEventListener('click', function (e) {
                         inp.value = this.getElementsByTagName('input')[0].value;
-                        if (inp.id === 'location') {
-                            document.querySelectorAll('#loc-icon path').forEach(function(icon) {
-                                icon.style.fill = 'black';
-                            });
-                        } else if (inp.id === 'returnLocation') {
-                            document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
-                                icon.style.fill = 'black';
-                            });
-                        }
+                        // if (inp.id === 'location') {
+                        //     document.querySelectorAll('#loc-icon path').forEach(function(icon) {
+                        //         icon.style.fill = 'black';
+                        //     });
+                        // } else if (inp.id === 'returnLocation') {
+                        //     document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
+                        //         icon.style.fill = 'black';
+                        //     });
+                        // }
                         closeAllLists();
 
 
