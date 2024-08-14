@@ -240,19 +240,40 @@ input::placeholder {
 .input-wrapper #loc-icon path,
 .input-wrapper #drop-of-icon path,
 .input-wrapper.error #drop-of-icon path,
-.input-wrapper.error #loc-icon path{
+.input-wrapper.error #loc-icon path {
     transition: fill 0.5s;
 }
 
-#returnLocationWrapper:hover #drop-of-icon path,
-.data-picker-day:hover svg path,
-.input-wrapper:hover #loc-icon path,
-.input-wrapper.error:hover #drop-of-icon path,
+@media (min-width: 768px) {
+    #returnLocationWrapper:hover #drop-of-icon path,
+    .data-picker-day:hover svg path,
+    .input-wrapper:hover #loc-icon path,
+    .input-wrapper.error:hover #loc-icon path,
+    .input-wrapper.error:hover #drop-of-icon path {
+        fill: #4A44F2;
+        transition: fill 0.5s;
+    }
+}
+
+/* Додаємо стилі для мобільної версії */
+@media (max-width: 767px) {
+    .input-wrapper.filled #loc-icon path,
+    #returnLocationWrapper.filled #drop-of-icon path {
+        fill: black;
+        transition: fill 0.5s;
+    }
+
+    .input-wrapper:focus-within #loc-icon path,
+    #returnLocationWrapper:focus-within #drop-of-icon path {
+        fill: #4A44F2;
+        transition: fill 0.5s;
+    }
+}
+
 .input-wrapper.error.focused #drop-of-icon path,
 .input-wrapper.focused #loc-icon path,
 #returnLocationWrapper.focused #drop-of-icon path,
-.input-wrapper.error:hover #loc-icon path,
-.input-wrapper.error.focused #loc-icon path{
+.input-wrapper.error.focused #loc-icon path {
     fill: #4A44F2;
     transition: fill 0.5s;
 }
