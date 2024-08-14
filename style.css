@@ -925,5 +925,5 @@ input:checked + .slider::after {
 input {
     border-radius: 0;
     outline: none;
-    caret-color: black;
+    /*caret-color: black;*/
 }
