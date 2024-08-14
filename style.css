@@ -311,6 +311,7 @@ input::placeholder {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
+    height: 18px;
 }
 
 .input-wrapper input:focus {
@@ -900,12 +901,8 @@ input:checked + .slider::after {
     border: none;
     border-radius: 5px;
 }
-
-input:focus, textarea:focus {
-    caret-color: black;
+input {
+    border-radius: 0;
     outline: none;
-}
-
-input, textarea {
-    caret-color: black; /* Чорний курсор */
+    caret-color: black;
 }
