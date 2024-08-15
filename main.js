@@ -195,13 +195,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                         inp.value = this.getElementsByTagName('input')[0].value;
                         // if (inp.id === 'location') {
                         //     document.querySelectorAll('#loc-icon path').forEach(function(icon) {
-                        //         // icon.style.fill = 'black';
+                        //         icon.style.fill = 'black';
                         //     });
                         // } else if (inp.id === 'returnLocation') {
                         //     document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
-                        //         // icon.style.fill = 'black';
+                        //         icon.style.fill = 'black';
                         //     });
                         // }
+                        // document.querySelectorAll('.input-wrapper').forEach(function (element) {
+                        //     this.classList.remove('focused');
+                        // });
                         closeAllLists();
 
 
