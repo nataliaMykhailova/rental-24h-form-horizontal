@@ -1258,6 +1258,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitBtn.style.display = 'none';
                 formContainer.classList.add('fixed-on-focus');
                 removeIcon.style.display = 'inline';
+                const input = this.previousElementSibling;
+                input.focus();
             }
         });
 
