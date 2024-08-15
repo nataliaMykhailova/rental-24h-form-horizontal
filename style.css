@@ -256,6 +256,28 @@ input::placeholder {
     transition: fill 0.5s;
 }
 
+@media (max-width: 767px) {
+    .input-wrapper.filled #loc-icon path,
+    #returnLocationWrapper.filled #drop-of-icon path {
+        fill: black;
+        transition: fill 0.5s;
+    }
+
+    .input-wrapper:focus-within #loc-icon path,
+    #returnLocationWrapper:focus-within #drop-of-icon path {
+        fill: #4A44F2;
+        transition: fill 0.5s;
+    }
+
+    .input-wrapper.error.focused #loc-icon path,
+    .input-wrapper.focused #loc-icon path,
+    #returnLocationWrapper.focused #drop-of-icon path,
+    .input-wrapper.error.focused #drop-of-icon path {
+        fill: #4A44F2;
+        transition: fill 0.5s;
+    }
+}
+
 .remove-icon {
     display: none;
     position: absolute;

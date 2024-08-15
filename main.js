@@ -27,15 +27,6 @@ switchInput.addEventListener('change', function() {
 document.querySelectorAll('.input-wrapper').forEach(function (element) {
     element.addEventListener('focusin', function () {
         this.classList.add('focused');
-        if (this.querySelector('#location')) {
-            document.querySelectorAll('#loc-icon path').forEach(function(icon) {
-                icon.style.fill = '#4A44F2'; // Синій колір
-            });
-        } else if (this.querySelector('#returnLocation')) {
-            document.querySelectorAll('#drop-of-icon path').forEach(function(icon) {
-                icon.style.fill = '#4A44F2'; // Синій колір
-            });
-        }
     });
     element.addEventListener('focusout', function () {
         this.classList.remove('focused');
