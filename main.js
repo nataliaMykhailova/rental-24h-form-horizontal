@@ -1259,6 +1259,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 formContainer.classList.add('fixed-on-focus');
                 removeIcon.style.display = 'inline';
                 const input = this.previousElementSibling;
+                input.blur();
                 input.focus();
             }
         });
