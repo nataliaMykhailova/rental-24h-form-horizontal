@@ -1253,15 +1253,14 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         locationInput.addEventListener('focus', () => {
-            if (!formContainer.classList.contains('expanded')) {
-                formContainer.classList.add('expanded');
-                submitBtn.style.display = 'none';
-                formContainer.classList.add('fixed-on-focus');
-                removeIcon.style.display = 'inline';
-                const input = this.previousElementSibling;
-                input.blur();
-                input.focus();
-            }
+            setTimeout(() => {
+                if (!formContainer.classList.contains('expanded')) {
+                    formContainer.classList.add('expanded');
+                    submitBtn.style.display = 'none';
+                    formContainer.classList.add('fixed-on-focus');
+                    removeIcon.style.display = 'inline';
+                }
+            }, 300); // Затримка в 300 мс (можна змінити значення на потрібне вам)
         });
 
         document.addEventListener('click', function (e) {
