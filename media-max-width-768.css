@@ -272,7 +272,7 @@
 
     .autocomplete-items>div {
         font-size: 16px;
-        height: 56px;
+        height: auto;
     }
     #original-picker-section {
         display: flex;
