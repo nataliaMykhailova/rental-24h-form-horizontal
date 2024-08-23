@@ -561,4 +561,7 @@
         caret-color: black;
         outline: none;
     }
+    .calcCar{
+        font-size: 10px;
+    }
 }
