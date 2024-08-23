@@ -146,9 +146,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14.1 4C15.7167 4 17.1042 4.525 18.2625 5.575C19.4208 6.625 20 7.93333 20 9.5C20 11.0667 19.4208 12.375 18.2625 13.425C17.1042 14.475 15.7167 15 14.1 15H7.8L10.4 17.6L9 19L4 14L9 9L10.4 10.4L7.8 13H14.1C15.15 13 16.0625 12.6667 16.8375 12C17.6125 11.3333 18 10.5 18 9.5C18 8.5 17.6125 7.66667 16.8375 7C16.0625 6.33333 15.15 6 14.1 6H7V4H14.1Z" fill="black"/></svg>`;
         }
-
-        buttonDiv.innerHTML = iconPosition === 'left' ? `${svgIcon}   ${label}` : `${label} ${svgIcon}`;
-        buttonDiv.querySelector('svg').style.margin = iconPosition === 'left' ? '0 10px 0 0' : '0 0 0 10px';
+        buttonDiv.innerHTML = buttonDiv.innerHTML = `
+        <div class="autocomplete-svg">${svgIcon}</div>
+        <div class="autocomplete">
+            <div class="autocomplete-next">${label}</div>
+            <p class="calcCar">Supporting text</p>
+        </div>`;
         buttonDiv.style.display = 'flex';
         buttonDiv.style.alignItems = 'center';
         return buttonDiv;
@@ -195,12 +198,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                     b = document.createElement('DIV');
                     const svgIcon = arr[i].isAirport ?
                         `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 19 20" fill="none">
-<path d="M11 6.947L19 12V14L11 11.474V16.834L14 18.5V20L9.5 19L5 20V18.5L8 16.833V11.473L0 14V12L8 6.947V1.5C8 1.10218 8.15804 0.720644 8.43934 0.43934C8.72064 0.158035 9.10218 0 9.5 0C9.89782 0 10.2794 0.158035 10.5607 0.43934C10.842 0.720644 11 1.10218 11 1.5V6.947Z" fill="black"/>
-</svg>` :
+                            <path d="M11 6.947L19 12V14L11 11.474V16.834L14 18.5V20L9.5 19L5 20V18.5L8 16.833V11.473L0 14V12L8 6.947V1.5C8 1.10218 8.15804 0.720644 8.43934 0.43934C8.72064 0.158035 9.10218 0 9.5 0C9.89782 0 10.2794 0.158035 10.5607 0.43934C10.842 0.720644 11 1.10218 11 1.5V6.947Z" fill="black"/>
+                        </svg>` :
                         `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 20" fill="none">
-<path d="M7 9.5C6.33696 9.5 5.70107 9.23661 5.23223 8.76777C4.76339 8.29893 4.5 7.66304 4.5 7C4.5 6.33696 4.76339 5.70107 5.23223 5.23223C5.70107 4.76339 6.33696 4.5 7 4.5C7.66304 4.5 8.29893 4.76339 8.76777 5.23223C9.23661 5.70107 9.5 6.33696 9.5 7C9.5 7.3283 9.43534 7.65339 9.3097 7.95671C9.18406 8.26002 8.99991 8.53562 8.76777 8.76777C8.53562 8.99991 8.26002 9.18406 7.95671 9.3097C7.65339 9.43534 7.3283 9.5 7 9.5ZM7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 5.14348 13.2625 3.36301 11.9497 2.05025C10.637 0.737498 8.85652 0 7 0Z" fill="black"/>
-</svg>`;
-                    b.innerHTML = `<div class="autocomplete-svg">${svgIcon}</div><div class="autocomplete-next" ">${arr[i].display}</div>`;
+                            <path d="M7 9.5C6.33696 9.5 5.70107 9.23661 5.23223 8.76777C4.76339 8.29893 4.5 7.66304 4.5 7C4.5 6.33696 4.76339 5.70107 5.23223 5.23223C5.70107 4.76339 6.33696 4.5 7 4.5C7.66304 4.5 8.29893 4.76339 8.76777 5.23223C9.23661 5.70107 9.5 6.33696 9.5 7C9.5 7.3283 9.43534 7.65339 9.3097 7.95671C9.18406 8.26002 8.99991 8.53562 8.76777 8.76777C8.53562 8.99991 8.26002 9.18406 7.95671 9.3097C7.65339 9.43534 7.3283 9.5 7 9.5ZM7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 5.14348 13.2625 3.36301 11.9497 2.05025C10.637 0.737498 8.85652 0 7 0Z" fill="black"/>
+                        </svg>`;
+                    b.innerHTML = `<div class="autocomplete-svg">${svgIcon}</div>
+                                   <div class="autocomplete">
+                                     <div class="autocomplete-next" ">${arr[i].display}</div>
+                                        <p class="calcCar">Supporting text</p>
+                                   </div>`;
                     b.innerHTML += `<input type="hidden" value="${arr[i].display}">`;
                     b.addEventListener('click', function (e) {
                         inp.value = this.getElementsByTagName('input')[0].value;
